@@ -1,3 +1,17 @@
+Changes to Yoyo
+=======================
+The code is copied from https://bitbucket.org/ollyc/yoyo
+
+I only do one line change in yoyo/connections.py, Line 49.
+
+kwargs = []
+Change to:
+kwargs = db_params
+
+Then, mysql can support db_params
+
+I do this because I want to solve mysql://test:test@localhost/db?local_infile=1
+
 Yoyo database migrations
 ========================
 
