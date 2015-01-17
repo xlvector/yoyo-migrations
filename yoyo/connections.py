@@ -46,7 +46,7 @@ def connect_odbc(username, password, host, port, database, db_params):
 def connect_mysql(username, password, host, port, database, db_params):
     import MySQLdb
 
-    kwargs = []
+    kwargs = {}
     for key, val in db_params.items():
         try:
             v = int(val)
