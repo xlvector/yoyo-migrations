@@ -1,0 +1,8 @@
+Installation
+------------
+
+Download from pypi.python.org and run::
+
+	python setup.py install
+
+
