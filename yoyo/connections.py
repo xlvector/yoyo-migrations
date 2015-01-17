@@ -46,7 +46,13 @@ def connect_odbc(username, password, host, port, database, db_params):
 def connect_mysql(username, password, host, port, database, db_params):
     import MySQLdb
 
-    kwargs = db_params
+    kwargs = []
+    for key, val in db_params.items():
+        try:
+            v = int(val)
+            kwargs[key] = v
+        except ValueError:
+            kwargs[key] = val
     if username is not None:
         kwargs['user'] = username
     if password is not None:
