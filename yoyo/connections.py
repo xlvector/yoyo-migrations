@@ -47,12 +47,13 @@ def connect_mysql(username, password, host, port, database, db_params):
     import MySQLdb
 
     kwargs = {}
-    for key, val in db_params.items():
-        try:
-            v = int(val)
-            kwargs[key] = v
-        except ValueError:
-            kwargs[key] = val
+    if db_params is not None:
+      for key, val in db_params.items():
+          try:
+              v = int(val)
+              kwargs[key] = v
+          except ValueError:
+              kwargs[key] = val
     if username is not None:
         kwargs['user'] = username
     if password is not None:
