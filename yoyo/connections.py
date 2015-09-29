@@ -134,7 +134,7 @@ def parse_uri(uri):
         netloc = ''
 
     try:
-        auth, netloc = netloc.split('@', 1)
+        auth, netloc = netloc.rsplit('@', 1)
     except ValueError:
         auth = ''
 
